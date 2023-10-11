@@ -24,7 +24,9 @@ def main():
         while shedule_day:  # расписание на день
             next_lesson = shedule_day.pop(0)
             print((next_lesson[0] - now.hour - 1) * 3600 + (60 - now.minute + next_lesson[1] + 25) * 60)
-            time.sleep((next_lesson[0] - now.hour) * 3600 + (abs(next_lesson[1] - now.minute + 15)) * 60)
+            timesleep=(next_lesson[0] - now.hour) * 3600 + (abs(next_lesson[1] - now.minute + 15)) * 60
+            if timesleep>0:
+                time.sleep(timesleep)
             result = botclick(login, password)
             botcheck(result)
         hours_to_wait = 24 - now.hour - 1
