@@ -15,7 +15,6 @@ xpath_authorization = '/html/body/div/div[1]/div/div[2]/div/div[4]/div/div[2]/fo
 xpath_mark = '/html/body/div/div/div[3]/div/div/div/div[2]/div[1]/div/div/div/div[1]/div/div/button'
 xpath_good_mark = '/html/body/div/div/div[3]/div/div/div/div[2]/div[1]/div/div/div/div[1]/div/div'
 
-
 def located(browser, xpath):
     return WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.XPATH, xpath)))
 
@@ -42,7 +41,7 @@ def mark_etu(login, password):
         located(browser, xpath_IN).click()
         located(browser, xpath_authorization).click()
         located(browser, xpath_mark).click()
-        screenshot = browser.find_element('xpath', xpath_good_mark).screenshot('./successful.png')
+        screenshot =  located(browser, xpath_good_mark).screenshot('./successful.png')
         screenshot = Image.open('successful.png')
     except Exception:
         flag = False
