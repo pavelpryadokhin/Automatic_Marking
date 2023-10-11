@@ -21,7 +21,7 @@ def located(browser, xpath):
 
 
 def mark_etu(login, password):
-    service = Service(executable_path='/usr/sbin/chromedriver')
+    service = Service(executable_path='chromedriver.exe')
     options = webdriver.ChromeOptions()
     options.add_argument(
         'user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,like Gecko) Chrome/117.0.5938.92 Safari/537.36')

