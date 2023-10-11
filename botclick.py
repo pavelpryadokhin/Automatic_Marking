@@ -1,6 +1,5 @@
 import time
 from selenium import webdriver
-from selenium.common import NoSuchElementException
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -57,3 +56,4 @@ def botclick(login, password):
         time.sleep(10)
         result = mark_etu(login, password)
     return result[1]
+
