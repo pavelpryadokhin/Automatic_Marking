@@ -15,12 +15,13 @@ xpath_authorization = '/html/body/div/div[1]/div/div[2]/div/div[4]/div/div[2]/fo
 xpath_mark = '/html/body/div/div/div[3]/div/div/div/div[2]/div[1]/div/div/div/div[1]/div/div/button'
 xpath_good_mark = '/html/body/div/div/div[3]/div/div/div/div[2]/div[1]/div/div/div/div[1]/div/div'
 
+
 def located(browser, xpath):
     return WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.XPATH, xpath)))
 
 
 def mark_etu(login, password):
-    service = Service(executable_path='chromedriver.exe')
+    service = Service(executable_path='chromedriver')
     options = webdriver.ChromeOptions()
     options.add_argument(
         'user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,like Gecko) Chrome/117.0.5938.92 Safari/537.36')
@@ -41,7 +42,7 @@ def mark_etu(login, password):
         located(browser, xpath_IN).click()
         located(browser, xpath_authorization).click()
         located(browser, xpath_mark).click()
-        screenshot =  located(browser, xpath_good_mark).screenshot('./successful.png')
+        screenshot = located(browser, xpath_good_mark).screenshot('./successful.png')
         screenshot = Image.open('successful.png')
     except Exception:
         flag = False
@@ -56,4 +57,3 @@ def botclick(login, password):
         time.sleep(10)
         result = mark_etu(login, password)
     return result[1]
-

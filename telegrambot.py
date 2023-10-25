@@ -1,10 +1,10 @@
 import telebot
+from data import _token, _BOT_URL
 
-token = '6504185878:AAHV1rkUulyyU3B57t10HuHuiIRf5Egpq04'
-BOT_URL = '900081399'
+token = _token
+BOT_URL = _BOT_URL
 
 
 def botcheck(screenshot):
     bot = telebot.TeleBot(token, parse_mode=None)
     bot.send_photo(BOT_URL, screenshot)
-
