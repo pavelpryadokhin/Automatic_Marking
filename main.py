@@ -26,15 +26,14 @@ def main():
             next_lesson = shedule_day.pop(0)
             print((next_lesson[0] - now.hour - 1) * 3600 + (60 - now.minute + next_lesson[1] + 2) * 60)
             timesleep = (next_lesson[0] - now.hour - 1) * 3600 + (60 - now.minute + next_lesson[1] + 2) * 60
-            if timesleep > 0:
-                time.sleep(timesleep)
             if timesleep > -5400:
+                if timesleep > 0: time.sleep(timesleep)
                 result = botclick(login, password)
                 botcheck(result)
-        hours_to_wait = 24 - now.hour - 1
-        munutes_to_wait = 60 - now.minute - 1
-        seconds_to_wait = 60 - now.second - 1
-        time.sleep(hours_to_wait * 3600 + munutes_to_wait * 60 + seconds_to_wait)
+    hours_to_wait = 24 - now.hour - 1
+    munutes_to_wait = 60 - now.minute - 1
+    seconds_to_wait = 60 - now.second - 1
+    time.sleep(hours_to_wait * 3600 + munutes_to_wait * 60 + seconds_to_wait)
 
 
 if __name__ == "__main__":
