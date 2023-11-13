@@ -35,7 +35,7 @@ def mark_etu(login, password):
     flag = True
     screenshot = Image.open('error.png')
     try:
-        browser.get('https://digital.etu.ru/attendance/auth')
+        browser.get('https://----------------------')
         located(browser, xpath_ETU).click()
         browser.find_element('xpath', xpath_login).send_keys(login)
         browser.find_element('xpath', xpath_password).send_keys(password)
